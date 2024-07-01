@@ -9,11 +9,11 @@ export function History() {
 
   return (
     <main className="flex flex-col flex-1 p-14 gap-8 items-start">
-      <h1 className="font-bold text-2xl text-gray-100">Meu histórico</h1>
+      <h1 className="font-bold text-2xl text-gray-100 dark:text-gray-600">Meu histórico</h1>
 
       <div className="overflow-auto w-full">
         <table className="w-full text-left border-collapse">
-          <thead className="bg-gray-600 text-gray-100 font-bold text-sm">
+          <thead className="bg-gray-600 text-gray-100 font-bold text-sm dark:text-gray-600  dark:bg-slate-100">
             <tr className="">
               <th className="rounded-tl-lg py-4 px-6 w-[50%]">Tarefa</th>
               <th className="py-4 pr-6">Duração</th>
@@ -22,10 +22,10 @@ export function History() {
             </tr>
           </thead>
 
-          <tbody className="bg-gray-700 text-gray-300 font-normal text-sm ">
+          <tbody className="bg-gray-700 text-gray-300 font-normal text-sm dark:text-gray-600 dark:bg-slate-100">
             {cycles.map((cycle) => {
               return (
-                <tr key={cycle.id} className="border-t-4 border-gray-800">
+                <tr key={cycle.id} className="border-t-4 border-gray-800 dark:border-gray-300">
                   <td className="w-[50%] py-4 px-6">{cycle.task}</td>
                   <td className="py-4">{cycle.minutesAmount} Minutos</td>
                   <td className="py-4">

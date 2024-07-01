@@ -54,7 +54,7 @@ export function Home() {
         {activeCycle ? (
           <button
             onClick={InterrupetedCycle}
-            className="flex gap-2 w-full items-center justify-center h-16 rounded-lg text-base font-bold bg-red-500 duration-150 [&:not(:disabled)]:hover:bg-red-700 hover:duration-150  disabled:opacity-70 disabled:cursor-not-allowed"
+            className="flex gap-2 w-full items-center justify-center h-16 rounded-lg text-base font-bold bg-red-500 duration-150 [&:not(:disabled)]:hover:bg-red-700 hover:duration-150  disabled:opacity-70 disabled:cursor-not-allowed dark:text-slate-100"
           >
             <Hand size={24} />
             Interroper
@@ -62,7 +62,7 @@ export function Home() {
         ) : (
           <button
             disabled={DisableButton}
-            className="flex gap-2 w-full items-center justify-center h-16 rounded-lg text-base font-bold bg-green-500 duration-150 [&:not(:disabled)]:hover:bg-green-700 hover:duration-150 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="flex gap-2 w-full items-center justify-center h-16 rounded-lg text-base font-bold bg-green-500 duration-150 [&:not(:disabled)]:hover:bg-green-700 hover:duration-150 disabled:opacity-70 disabled:cursor-not-allowed dark:text-slate-100"
           >
             <Play size={24} />
             Começar

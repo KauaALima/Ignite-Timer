@@ -8,7 +8,7 @@ export function NewCycleForm() {
   const { register } = useFormContext()
 
   return (
-    <div className="flex w-full items-center justify-center gap-2 text-lg text-gray-100 font-bold flex-wrap">
+    <div className="flex w-full items-center justify-center gap-2 text-lg text-gray-100 font-bold flex-wrap dark:text-gray-900">
       <label htmlFor="TextInput">Vou trabalhar em</label>
       <input
         id="TextInput"
@@ -16,7 +16,7 @@ export function NewCycleForm() {
         type="text"
         placeholder="Dê um nome para o seu projeto"
         required
-        className="flex-1 h-10 px-2 bg-transparent border-0 border-b-2 border-gray-500 disabled:cursor-not-allowed focus:shadow-none duration-150 focus:border-green-500 "
+        className="flex-1 h-10 px-2 bg-transparent border-0 border-b-2 border-gray-500 disabled:cursor-not-allowed focus:shadow-none duration-150 focus:border-green-500 dark:placeholder:text-gray-500"
         disabled={!!activeCycle}
         {...register('task')}
       />
@@ -32,11 +32,12 @@ export function NewCycleForm() {
       <input
         type="number"
         id="Duration"
+        placeholder='0'
         step="5"
         min="5"
         max="60"
         className="w-16 h-10 px-2 bg-transparent border-0 border-b-2 border-gray-500 disabled:cursor-not-allowed focus:shadow-none duration-150 focus:border-green-500  
-      [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+      [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none dark:placeholder:text-gray-500"
         disabled={!!activeCycle}
         {...register('minutesAmount', { valueAsNumber: true })}
       />

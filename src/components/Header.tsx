@@ -1,11 +1,17 @@
-import { Timer, ScrollText } from 'lucide-react'
+import { Timer, ScrollText, Moon , Sun } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import IgniteLogo from '../assets/Logo.svg'
+import { useContext } from 'react'
+import { CyclesContext } from '../contexts/CycleContext'
 
 export function Header() {
+  const {toogleMode, lightMode} = useContext(CyclesContext)
   return (
     <header className="flex items-center justify-between ">
-      <img src={IgniteLogo} alt="Logo Ignite" />
+      <div className='flex gap-6'>
+        <img src={IgniteLogo} alt="Logo Ignite" />
+        <button onClick={toogleMode}> {lightMode ? <Moon size={29} /> : < Sun size={29}/>} </button>
+      </div>
 
       <nav className="flex gap-2 items-center justify-between">
         <NavLink

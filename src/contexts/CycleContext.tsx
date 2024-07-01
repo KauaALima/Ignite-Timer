@@ -27,6 +27,8 @@ interface CyclesContextType {
   SetSecondsPassed: (seconds: number) => void
   CreateNewCycle: (data: CreateCycleProps) => void
   InterrupetedCycle: () => void
+  lightMode: boolean
+  toogleMode: () => void
 }
 
 interface CycleContextProviderProps {
@@ -60,7 +62,10 @@ export function CycleContextProvider({ children }: CycleContextProviderProps) {
   }, [cycleState])
 
   const { cycles, activeCycleId } = cycleState
+  
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
+
+  const [lightMode, setLightMode] = useState(false)
 
   const [secondsPassed, setSecondsPassed] = useState(() => {
     if (activeCycle) {
@@ -77,7 +82,7 @@ export function CycleContextProvider({ children }: CycleContextProviderProps) {
   function markCurrentCycleAsFinished() {
     dispatch(markCurrentCycleAsFinishedAction())
   }
-
+  
   function CreateNewCycle(data: CreateCycleProps) {
     const id = String(new Date().getTime())
 
@@ -96,6 +101,10 @@ export function CycleContextProvider({ children }: CycleContextProviderProps) {
     dispatch(interrupetedCycleAction())
   }
 
+  function toogleMode() {
+    setLightMode(!lightMode)
+  }
+
   return (
     <CyclesContext.Provider
       value={{
@@ -107,6 +116,8 @@ export function CycleContextProvider({ children }: CycleContextProviderProps) {
         markCurrentCycleAsFinished,
         CreateNewCycle,
         InterrupetedCycle,
+        lightMode,
+        toogleMode,
       }}
     >
       {children}

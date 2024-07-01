@@ -62,13 +62,13 @@ export function Coutdown() {
 
   return (
     <div className="font-mono text-[10rem] leading-[8rem] font-bold flex gap-4 items-center justify-center">
-      <span className="py-8 px-4 bg-gray-700 rounded-lg">{Minutes[0]}</span>
-      <span className="py-8 px-4 bg-gray-700 rounded-lg">{Minutes[1]}</span>
+      <span className="py-8 px-4 bg-gray-700 rounded-lg dark:bg-slate-100">{Minutes[0]}</span>
+      <span className="py-8 px-4 bg-gray-700 rounded-lg dark:bg-slate-100">{Minutes[1]}</span>
       <span className="py-8 overflow-hidden w-16 flex justify-center text-green-500">
         :
       </span>
-      <span className="py-8 px-4 bg-gray-700 rounded-lg">{Seconds[0]}</span>
-      <span className="py-8 px-4 bg-gray-700 rounded-lg">{Seconds[1]}</span>
+      <span className="py-8 px-4 bg-gray-700 rounded-lg dark:bg-slate-100">{Seconds[0]}</span>
+      <span className="py-8 px-4 bg-gray-700 rounded-lg dark:bg-slate-100">{Seconds[1]}</span>
     </div>
   )
 }

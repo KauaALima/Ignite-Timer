@@ -21,8 +21,14 @@ export default {
 
         green: {
           300: '#00B37E',
+          400: '#54B397',
           500: '#00875F',
           700: '#015F43',
+        },
+
+        slate: {
+          100: '#DAE6E2',
+          300: '#EAF6F2',
         },
 
         red: {
@@ -37,4 +43,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: "class"
 }
